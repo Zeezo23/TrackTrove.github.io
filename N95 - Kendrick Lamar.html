@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="N95.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N95 - Kendrick Lamar</title>
+  <script src="https://kit.fontawesome.com/3908a83bf6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+  <div class="music_player">
+    <img src="images/MrMorale.jpg" class="album-cover">
+    <h1>N95</h1>
+    <p>Mr. Morale & The Big Steppers</p>
+    <p>Kendrick Lamar</p>
+
+    <audio id="song">
+      <source src="Instrumentals/N95%20Kendrick%20Lamar.mp3" type="audio/mpeg">
+    </audio>
+    <input type="range" value="0" id="progress">
+
+    <div class="controls">
+      <div onclick="playPause()"><i class="fa-solid fa-play" id="controlIcon"></i></div>
+    </div>
+  </div>
+</div>
+
+<div id="search"></div>
+
+<script>
+
+    let progress = document.getElementById("progress");
+    let song = document.getElementById("song");
+    let controlIcon = document.getElementById("controlIcon")
+
+    song.onloadedmetadata = function()
+    {
+        song.pause();
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+    }
+
+    function playPause()
+    {
+        if (controlIcon.classList.contains("fa-pause"))
+        {
+            song.pause();
+            controlIcon.classList.remove("fa-pause");
+            controlIcon.classList.add("fa-play");
+        }
+        else
+        {
+            song.play();
+            controlIcon.classList.add("fa-pause");
+            controlIcon.classList.remove("fa-play");
+        }
+    }
+
+    if (song.play())
+    {
+        setInterval(()=>{
+            progress.value = song.currentTime;
+        }, 500)
+    }
+
+    progress.onchange = function()
+    {
+        song.currentTime = progress.value;
+    }
+
+
+</script>
+</body>
+</html>

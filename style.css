@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "TitleTrackTrove";
+    src:url("fonts/Ailerons-Typeface.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "Description";
+    src:url("fonts/ONEDAY.otf") format('opentype');
+}
+
+body
+{
+    background-image: url("images/AlbumCoversBackground.jpg");
+    max-width: 1920px;
+    max-height: 860px;
+}
+
+#trackTroveTitle,
+#description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#trackTroveTitle {
+    font-family: "TitleTrackTrove";
+    text-align: center;
+    font-size: 60px;
+    -webkit-text-stroke: 1px white;
+    color: #0d212f;
+    animation: fadeIn 3s;
+    margin-top: 350px;
+    font-weight: bold;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#description {
+    font-size: 30px;
+    font-family: "Description";
+    text-align: center;
+    animation: fadeIn 9s;
+    color: black;
+    font-weight: bold;
+    margin-top: 250px;
+    display: inline-block;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn{
+0%
+{
+    opacity: 0;
+    transform: scale(1);
+}
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    width: 1200px;
+}
+
+#search-input {
+    padding: 20px;
+    width: 1200px;
+    animation: fadeIn 6s;
+    font-family: "TitleTrackTrove";
+    color: black;
+    font-style: italic;
+    font-size: 30px;
+}
+
+#search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 1200px;
+    background-color: #f9f9f9;
+    border: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "TitleTrackTrove";
+    color: black;
+    font-style: italic;
+}
+
+#search-results li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    font-family: "TitleTrackTrove";
+    color: black;
+    font-style: italic;
+}
+
+#search-results li a
+{
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    #trackTroveTitle {
+        font-size: 40px;
+        margin-top: 200px;
+    }
+
+    #description {
+        font-size: 20px;
+        margin-top: 150px;
+    }
+
+    body
+    {
+        transform: scale(0.55);
+    }
+
+    #search-input
+    {
+        transform: scale(0.55);
+    }
+
+    #search-results
+    {
+        transform: scale(0.55);
+    }
+}
+
+
+
+
