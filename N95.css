@@ -89,11 +89,11 @@ body {
     height: 60px;
     border-color: black;
     border-radius: 50%;
-    background-color: #dedad7;
+    background-color: #6a3815;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #6a3815;
+    color: #dedad7;
     cursor: pointer;
 }
 
